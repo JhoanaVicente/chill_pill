@@ -74,7 +74,7 @@
       border-radius: 16px;
       padding: 20px;
       cursor: pointer;
-      font-size: 25px;
+      font-size: 28px;
       width: 279px;
       height: 77px;
       margin: 10px;
@@ -115,10 +115,11 @@
   
       img {
         max-width: 200px;
+        width: 42%;
       }
   
       p {
-        font-size: 1.5em;
+        font-size: 2em;
       }
     }
   </style>
