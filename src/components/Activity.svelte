@@ -1,10 +1,7 @@
+<!-- src/components/Activity.svelte -->
 <script>
-    export let activity;
+    export let activity; // Se pasará la actividad como prop
   </script>
-  
-  <div class="activity">
-    <p>{activity}</p>
-  </div>
   
   <style>
     .activity {
@@ -15,4 +12,8 @@
       background-color: #ecf0f1;
     }
   </style>
+  
+  <div class="activity">
+    <p>{activity}</p>
+  </div>
   
