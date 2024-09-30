@@ -1,4 +1,4 @@
-# This repo is no longer maintained. Consider using `npm init vite` and selecting the `svelte` option or — if you want a full-fledged app framework — use [SvelteKit](https://kit.svelte.dev), the official application framework for Svelte.
+El objetivo es crear una experiencia positiva que haga que los usuarios asocien "ChillPill" con momentos divertidos y relajantes. Con un buen diseño, un enfoque centrado en el usuario y un marketing efectivo, la aplicación puede convertirse en una solución popular para combatir el aburrimiento.
 
 ---
 

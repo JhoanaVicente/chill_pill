@@ -1,30 +1,32 @@
 <script>
-	export let name;
+    // Puedes agregar lógica aquí si es necesario
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+    /* Agrega estilos personalizados aquí */
+    .container {
+        text-align: center;
+        background-color: #4a4e69;
+        color: white;
+        padding: 20px;
+    }
+    .button {
+        background-color: #9a8c98;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+    }
 </style>
+
+<div class="container">
+    <h1>ChillPill</h1>
+    <p>¡Hola! ¿Aburrido? Toma una ChillPill y descubre algo divertido para hacer.</p>
+    <button class="button">Sorpréndeme</button>
+    <div>
+        <button class="button">Juegos Clásicos</button>
+        <button class="button">Desafíos de Lógica</button>
+        <button class="button">Ejercicios Creativos</button>
+        <button class="button">Proyectos DIY</button>
+    </div>
+</div>
