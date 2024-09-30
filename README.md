@@ -1,6 +1,8 @@
 # Chill Pill  
 Chill Pill es una aplicación web creada con Svelte para descubrir actividades divertidas cuando estás aburrido.  
 
+## Vista previa de la aplicación  
+![Primer diseño](./public/assets/primer%20diseño.png)  
 
 ## Requisitos 
 - Node.js (v14 o superior)
