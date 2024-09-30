@@ -6,7 +6,12 @@ Chill Pill es una aplicación web creada con Svelte para descubrir actividades d
 
 ## Requisitos 
 - Node.js (v14 o superior)
-- Git
+- Git  
+
+## Tecnologías Utilizadas  
+Frontend: Svelte  
+Estilos: CSS  
+API: Bored Api  
 
 ## Instalación  
 1. Clonar el repositorio: 
