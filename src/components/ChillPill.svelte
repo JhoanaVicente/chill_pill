@@ -1,22 +1,36 @@
 <script>
-  let activity = ''; // Variable reactiva para almacenar la actividad obtenida de la API
+  import { onMount } from 'svelte';
 
-  // Función para obtener la actividad desde la API
+  let activity = ''; // Variable para almacenar la actividad
+  let isFetching = false; // Estado para manejar si se está haciendo una solicitud
+  let errorMessage = ''; // Para almacenar cualquier mensaje de error
+
+  // Función para obtener la actividad de la API 
   async function getActivity() {
+    if (isFetching) return; // Si ya estamos haciendo una solicitud, no hacemos otra
+    isFetching = true; // Marcamos que estamos en proceso de fetch
+    errorMessage = ''; // Limpiamos cualquier mensaje de error previo
+
     try {
-        console.log('Botón clicado, llamando a la API...');
-        // Usar un proxy de CORS si es necesario, pero primero prueba sin él si la API permite las solicitudes directamente.
-        const response = await fetch('https://www.boredapi.com/api/activity');
-        if (!response.ok) {
-            throw new Error(`Error en la respuesta de la API: ${response.status}`);
-        }
-        const data = await response.json();
-        activity = data.activity;  // Actualiza el estado
-        console.log('Actividad sugerida:', activity);
+      // Cambia la URL al proxy
+      const response = await fetch('https://bored-api.appbrewery.com/'); 
+      if (!response.ok) throw new Error('Error de red');
+
+      const data = await response.json(); // Obtenemos la actividad
+      activity = data.value; // Asignamos la actividad, la clave 'value' es del JSON de Chuck Norris
     } catch (error) {
-        console.error('Error al obtener la actividad:', error);
+      console.error('Error fetching activity:', error.message); // Muestra solo el mensaje de error
+      errorMessage = error.message; // Guardamos el mensaje de error para mostrarlo en la UI
+    } finally {
+      isFetching = false; // Restablecemos el estado de fetching
     }
-}
+    console.log('Intentando obtener actividad...');
+  }
+
+  // Llamamos a la función para obtener una actividad al cargar el componente
+  onMount(() => {
+    getActivity();
+  });
 </script>
 
 <section class="chillpill">
@@ -35,10 +49,12 @@
       ¡Hola! ¿Aburrido? Toma una ChillPill y descubre algo divertido para hacer.
     </p>
     <button on:click={getActivity}>Sorpréndeme</button>
-    <!-- Botón para obtener una nueva actividad -->
 
-    <!-- Mostramos la actividad aquí -->
-    {#if activity}
+    {#if isFetching}
+      <p>Cargando actividad...</p>
+    {:else if errorMessage}
+      <p style="color: red;">Error: {errorMessage}</p>
+    {:else if activity}
       <p class="activity">Actividad sugerida: {activity}</p>
     {/if}
   </div>
@@ -58,7 +74,6 @@
     margin-bottom: 20px;
   }
 
-  /* Asegura que los botones se alineen correctamente en fila */
   .container {
     display: flex;
     justify-content: space-between;
@@ -68,7 +83,6 @@
     margin-right: auto;
   }
 
-  /* Estilo de los botones */
   .container button {
     font-family: Lato, sans-serif;
     background-color: #5bb2b0;
@@ -82,8 +96,8 @@
     width: 167px;
     height: 78px;
     margin: 10px;
-    white-space: normal; /* Permite que el texto se ajuste en varias líneas */
-    text-align: center; /* Alinea el texto en el centro del botón */
+    white-space: normal;
+    text-align: center;
   }
 
   .container2 {
@@ -120,7 +134,7 @@
     color: #e09c3b;
     font-size: 3em;
     font-weight: bold;
-    white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+    white-space: normal;
     text-align: center;
     text-shadow:
       1px 0px 5px black,
