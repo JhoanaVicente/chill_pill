@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get('/api/activity', async (req, res) => {
   try {
-    const response = await axios.get('https://bored-api.appbrewery.com/');
+    const response = await axios.get('https://bored-api.appbrewery.com/api/activity');
     res.json(response.data); // Reenviar la respuesta al cliente
   } catch (error) {
     console.error('Error fetching activity:', error); // Log de error en consola
