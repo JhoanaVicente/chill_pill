@@ -1,36 +1,34 @@
 <script>
-  import { onMount } from 'svelte';
+  import Activity from "./Activity.svelte"; // Asegúrate de que la ruta sea correcta
 
-  let activity = ''; // Variable para almacenar la actividad
+  let activity = ""; // Variable para almacenar la actividad
   let isFetching = false; // Estado para manejar si se está haciendo una solicitud
-  let errorMessage = ''; // Para almacenar cualquier mensaje de error
+  let errorMessage = ""; // Para almacenar cualquier mensaje de error
 
-  // Función para obtener la actividad de la API 
+  // Función para obtener la actividad de la API
   async function getActivity() {
-    if (isFetching) return; // Si ya estamos haciendo una solicitud, no hacemos otra
-    isFetching = true; // Marcamos que estamos en proceso de fetch
-    errorMessage = ''; // Limpiamos cualquier mensaje de error previo
+    if (isFetching) return; // Evita múltiples solicitudes simultáneas
+    isFetching = true; // Marca el estado de fetch
+    errorMessage = ""; // Reinicia cualquier mensaje de error anterior
 
     try {
-      // Cambia la URL al proxy
-      const response = await fetch('http://localhost:5000/api/activity'); 
-      if (!response.ok) throw new Error('Error de red');
+      const response = await fetch("http://localhost:5000/api/activity");
+      if (!response.ok) throw new Error("Error de red");
 
-      const data = await response.json(); // Obtenemos la actividad
-      activity = data.value; // Asignamos la actividad, la clave 'value' es del JSON de Chuck Norris
+      const data = await response.json(); // Obtén la actividad
+      activity = data.activity; // Asigna la actividad obtenida
     } catch (error) {
-      console.error('Error fetching activity:', error.message); // Muestra solo el mensaje de error
-      errorMessage = error.message; // Guardamos el mensaje de error para mostrarlo en la UI
+      console.error("Error fetching activity:", error); // Más detalles en la consola
+      // Mensajes de error personalizados
+      if (error.message.includes("429")) {
+        errorMessage = "Demasiadas solicitudes. Intenta más tarde.";
+      } else {
+        errorMessage = "Error al obtener la actividad. Intenta nuevamente.";
+      }
     } finally {
-      isFetching = false; // Restablecemos el estado de fetching
+      isFetching = false; // Restablece el estado de fetch
     }
-    console.log('Intentando obtener actividad...');
   }
-
-  // Llamamos a la función para obtener una actividad al cargar el componente
-  onMount(() => {
-    getActivity();
-  });
 </script>
 
 <section class="chillpill">
@@ -53,9 +51,9 @@
     {#if isFetching}
       <p>Cargando actividad...</p>
     {:else if errorMessage}
-      <p style="color: red;">Error: {errorMessage}</p>
+      <p style="color: red;">Error: {errorMessage}</p> <!-- Muestra mensaje de error -->
     {:else if activity}
-      <p class="activity">Actividad sugerida: {activity}</p>
+      <Activity {activity} /> <!-- Muestra la actividad -->
     {/if}
   </div>
 </section>
@@ -136,11 +134,7 @@
     font-weight: bold;
     white-space: normal;
     text-align: center;
-    text-shadow:
-      1px 0px 5px black,
-      0px 1px 5px black,
-      1px 0px 5px black,
-      0px 1px 5px black;
+    text-shadow: 1px 0px 5px black, 0px 1px 5px black, 1px 0px 5px black, 0px 1px 5px black;
     margin: 20px 0;
   }
 
