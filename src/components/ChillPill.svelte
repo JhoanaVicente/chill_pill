@@ -13,7 +13,7 @@
 
     try {
       // Cambia la URL al proxy
-      const response = await fetch('https://bored-api.appbrewery.com/'); 
+      const response = await fetch('http://localhost:5000/api/activity'); 
       if (!response.ok) throw new Error('Error de red');
 
       const data = await response.json(); // Obtenemos la actividad
