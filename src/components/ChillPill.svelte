@@ -118,6 +118,7 @@
 </section>
 
 <style>
+  /* Contenedor principal */
   .chillpill {
     margin: 0 auto;
     max-width: 1200px;
@@ -129,15 +130,21 @@
     font-size: 4em;
     color: #e09c3b;
     margin-bottom: 20px;
+    
   }
 
+  /* Ajuste para el contenedor de botones */
   .container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: space-around; /* Centra los botones horizontalmente */
+    flex-wrap: wrap; /* Permite que los botones se muevan a la siguiente línea si es necesario */
     margin-bottom: 20px;
-    margin-left: auto;
-    margin-right: auto;
+  }
+
+  .button-container {
+    text-align: center;
+    margin: 10px;
+    width: 167px; /* Mantén el ancho de cada botón */
   }
 
   .container button {
@@ -150,30 +157,18 @@
     padding: 20px;
     cursor: pointer;
     font-size: 18px;
-    width: 167px;
+    width: 100%; /* Ancho del botón para ocupar el contenedor */
     height: 78px;
+    text-align: center;
     white-space: normal;
-    text-align: center;
   }
 
-  .button-container {
-    text-align: center;
-    width: 167px; /* Ajusta el ancho de cada botón */
-    margin: 10px;
-  }
-  .container2 {
-    text-align: center;
-    margin-top: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  /* Botón sorpresa */
   .btn-surprise {
-    font-size: 1.5em; /* Aumenta el tamaño de la palabra "Sorpréndeme" */
-    font-weight: bold; /* Puedes hacer el texto más grueso si lo deseas */
-    color: white; /* Color del texto */
-    background-color: #5bb2b0; /* Color del fondo del botón */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    background-color: #5bb2b0;
     padding: 20px;
     border: none;
     border-radius: 16px;
@@ -182,27 +177,19 @@
   }
 
   .btn-surprise:hover {
-    background-color: #e09c3b; /* Cambia el color de fondo cuando se pasa el ratón */
-    color: #fff; /* Cambia el color del texto al pasar el ratón si lo deseas */
+    background-color: #e09c3b;
+    color: #fff;
   }
 
-  button {
-    font-family: Lato, sans-serif;
-    background-color: #5bb2b0;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 16px;
-    padding: 20px;
-    cursor: pointer;
-    font-size: 18px;
-    width: 100%; /* Ancho del botón igual al contenedor */
-    height: 78px;
-    margin: 10px 0;
+  /* Estilos para el contenedor inferior */
+  .container2 {
+    text-align: center;
+    margin-top: 20px;
   }
 
+  /* Imágenes responsivas */
   img {
-    width: 28%;
+    width: 24%;
     max-width: 600px;
     height: auto;
     margin-bottom: 20px;
@@ -212,7 +199,6 @@
     color: #e09c3b;
     font-size: 3em;
     font-weight: bold;
-    white-space: normal;
     text-align: center;
     text-shadow:
       1px 0px 5px black,
@@ -222,20 +208,7 @@
     margin: 20px 0;
   }
 
-  button:hover {
-    background-color: #e09c3b;
-  }
-
-  .description-popup {
-    position: absolute; /* Posición absoluta para desplazar la descripción */
-    background-color: #5bb2b0;
-    color: #e09c3b;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 10; /* Asegúrate de que esté sobre otros elementos */
-    margin-top: 10px; /* Espacio entre el botón y la descripción */
-  }
-
+  /* Descripciones desplegables */
   .description-slides {
     color: #5bb2b0;
     font-size: 1.5em;
@@ -247,22 +220,22 @@
     border-radius: 8px;
   }
 
+  /* Media query para pantallas más pequeñas */
   @media (max-width: 768px) {
     .container {
-      flex-direction: column;
+      justify-content: center; /* Asegura que los botones estén centrados */
     }
 
-    .container button {
-      width: 100%;
+    .button-container {
+      width: 100%; /* Haz que los botones ocupen el ancho completo en pantallas pequeñas */
     }
 
     img {
-      max-width: 200px;
-      width: 42%;
+      width: 50%; /* Ajusta el tamaño de la imagen para pantallas más pequeñas */
     }
 
     p {
-      font-size: 2em;
+      font-size: 2em; /* Reduce el tamaño del texto en pantallas pequeñas */
     }
   }
 </style>
