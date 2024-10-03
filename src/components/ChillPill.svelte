@@ -30,7 +30,6 @@
     }
   }
 
-
   let buttonDescriptions = {
     juegosClasicos: "Tetris, Snake",
     desafiosLogica: "Sudokus, Crucigramas",
@@ -40,8 +39,7 @@
 
   let hoveredDescription = ""; // Para almacenar la descripción al pasar el ratón
 
-
-let showDescription = {
+  let showDescription = {
     juegosClasicos: false,
     desafiosLogica: false,
     ejerciciosCreativos: false,
@@ -57,9 +55,9 @@ let showDescription = {
 <section class="chillpill">
   <h1>Chill Pill</h1>
 
-    <div class="container">
+  <div class="container">
     <div class="button-container">
-      <button on:click={() => toggleDescription('juegosClasicos')}>
+      <button on:click={() => toggleDescription("juegosClasicos")}>
         Juegos Clásicos
       </button>
       {#if showDescription.juegosClasicos}
@@ -68,7 +66,7 @@ let showDescription = {
     </div>
 
     <div class="button-container">
-      <button on:click={() => toggleDescription('desafiosLogica')}>
+      <button on:click={() => toggleDescription("desafiosLogica")}>
         Desafíos de Lógica
       </button>
       {#if showDescription.desafiosLogica}
@@ -77,7 +75,7 @@ let showDescription = {
     </div>
 
     <div class="button-container">
-      <button on:click={() => toggleDescription('ejerciciosCreativos')}>
+      <button on:click={() => toggleDescription("ejerciciosCreativos")}>
         Ejercicios Creativos
       </button>
       {#if showDescription.ejerciciosCreativos}
@@ -86,7 +84,7 @@ let showDescription = {
     </div>
 
     <div class="button-container">
-      <button on:click={() => toggleDescription('proyectosDIY')}>
+      <button on:click={() => toggleDescription("proyectosDIY")}>
         Proyectos DIY
       </button>
       {#if showDescription.proyectosDIY}
@@ -94,13 +92,12 @@ let showDescription = {
       {/if}
     </div>
   </div>
-    
-    {#if hoveredDescription}
-      <div class="description-popup">
-        <p class="description-slides">{hoveredDescription}</p>
-      </div>
-    {/if}
-    
+
+  {#if hoveredDescription}
+    <div class="description-popup">
+      <p class="description-slides">{hoveredDescription}</p>
+    </div>
+  {/if}
 
   <div class="container2">
     <img src="../assets/pildora-chillpill.png" alt="Chill Pill" />
@@ -158,7 +155,7 @@ let showDescription = {
     white-space: normal;
     text-align: center;
   }
-  
+
   .button-container {
     text-align: center;
     width: 167px; /* Ajusta el ancho de cada botón */
@@ -230,16 +227,16 @@ let showDescription = {
   }
 
   .description-popup {
-  position: absolute; /* Posición absoluta para desplazar la descripción */
-  background-color: #5bb2b0;
-  color: #e09c3b;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 10; /* Asegúrate de que esté sobre otros elementos */
-  margin-top: 10px; /* Espacio entre el botón y la descripción */
-}
+    position: absolute; /* Posición absoluta para desplazar la descripción */
+    background-color: #5bb2b0;
+    color: #e09c3b;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Asegúrate de que esté sobre otros elementos */
+    margin-top: 10px; /* Espacio entre el botón y la descripción */
+  }
 
-.description-slides {
+  .description-slides {
     color: #5bb2b0;
     font-size: 1.5em;
     font-weight: bold;
@@ -249,7 +246,6 @@ let showDescription = {
     padding: 5px;
     border-radius: 8px;
   }
-
 
   @media (max-width: 768px) {
     .container {
