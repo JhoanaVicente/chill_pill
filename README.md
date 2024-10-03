@@ -1,5 +1,7 @@
 # Chill Pill  
-Chill Pill es una aplicación web creada con Svelte para descubrir actividades divertidas cuando estás aburrido.  
+Chill Pill es una aplicación web creada con Svelte para ofrecer actividades divertidas y creativas a las personas que buscan combatir el aburrimiento. Al hacer clic en "Sorpréndeme", la app sugiere una actividad aleatoria o una frase divertida de Chuck Norris.
+
+Aunque inicialmente estaba planeado usar la [Bored API](https://bored-api.appbrewery.com/) para las sugerencias de actividades, debido a algunos problemas técnicos, he utilizado la API de Chuck Norris temporalmente. En futuras versiones, planeo desarrollar una API propia para mejorar la experiencia y tener mayor control sobre el contenido.
 
 ## Vista previa de la aplicación  
 ![Primer diseño](./public/assets/primer-diseño.png)  
@@ -10,8 +12,7 @@ Chill Pill es una aplicación web creada con Svelte para descubrir actividades d
 
 - **Aplicación en Vercel**: [Ver aplicación](https://chill-pill-a1jx7vmhn-jhoanavicentes-projects.vercel.app)
 
-## Tablero de Trello  
-Puedes ver el progreso del proyecto Chill Pill en [Trello](https://trello.com/b/q5W49Uvb/prova-frontend-hackato-salo-ocupacio).  
+- **Tablero de Trello**:  [Ver el progreso en Trello](https://trello.com/b/q5W49Uvb/prova-frontend-hackato-salo-ocupacio).  
 
 ## Requisitos 
 - Node.js (v14 o superior)
@@ -20,7 +21,8 @@ Puedes ver el progreso del proyecto Chill Pill en [Trello](https://trello.com/b/
 ## Tecnologías Utilizadas  
 **Frontend**: Svelte  
 **Estilos**: CSS  
-**API**: [Bored Api](https://bored-api.appbrewery.com/)  
+**API**: [Chuck Norris API](https://api.chucknorris.io/)
+**Proxy Server**: Express, Axios, y Cors (para manejar CORS y llamadas API)
 
 ## Instalación  
 1. Clonar el repositorio: 
