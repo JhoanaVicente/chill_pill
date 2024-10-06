@@ -12,7 +12,7 @@
     errorMessage = ""; // Reinicia cualquier mensaje de error anterior
 
     try {
-      const response = await fetch("http://localhost:5000/api/activity");
+      const response = await fetch('/api/activity');
       if (!response.ok) throw new Error("Error de red");
 
       const data = await response.json(); // Obtén la actividad
