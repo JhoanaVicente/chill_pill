@@ -22,7 +22,6 @@ Aunque inicialmente estaba planeado usar la [Bored API](https://bored-api.appbre
 **Frontend**: Svelte  
 **Estilos**: CSS  
 **API**: [Chuck Norris API](https://api.chucknorris.io/)  
-**Proxy Server**: Express, Axios, y Cors (para manejar CORS y llamadas API)
 
 ## Instalación  
 1. Clonar el repositorio: 
