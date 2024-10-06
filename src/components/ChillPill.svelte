@@ -103,7 +103,7 @@
     <button class="btn-surprise" on:click={getActivity}>Sorpréndeme</button>
 
     {#if isFetching}
-      <p>Cargando actividad...</p>
+      <p>Cargando frase...</p>
     {:else if errorMessage}
       <p style="color: red;">Error: {errorMessage}</p>
       <!-- Muestra mensaje de error -->
