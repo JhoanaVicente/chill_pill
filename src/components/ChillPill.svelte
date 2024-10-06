@@ -5,30 +5,26 @@
   let isFetching = false; // Estado para manejar si se está haciendo una solicitud
   let errorMessage = ""; // Para almacenar cualquier mensaje de error
 
-  // Función para obtener la actividad de la API
   async function getActivity() {
     if (isFetching) return; // Evita múltiples solicitudes simultáneas
     isFetching = true; // Marca el estado de fetch
     errorMessage = ""; // Reinicia cualquier mensaje de error anterior
 
     try {
-      const response = await fetch('/api/activity');
-      if (!response.ok) throw new Error("Error de red");
+        const response = await fetch('http://localhost:3000/api/activity'); // Llama a tu API
+        if (!response.ok) throw new Error("Error de red");
 
-      const data = await response.json(); // Obtén la actividad
-      activity = data.activity; // Asigna la actividad obtenida
+        const data = await response.json(); // Obtén la actividad
+        console.log(data);
+        activity = data.value; // Asigna la actividad obtenida
     } catch (error) {
-      console.error("Error fetching activity:", error); // Más detalles en la consola
-      // Mensajes de error personalizados
-      if (error.message.includes("429")) {
-        errorMessage = "Demasiadas solicitudes. Intenta más tarde.";
-      } else {
+        console.error("Error fetching activity:", error);
         errorMessage = "Error al obtener la actividad. Intenta nuevamente.";
-      }
     } finally {
-      isFetching = false; // Restablece el estado de fetch
+        isFetching = false; // Restablece el estado de fetch
     }
-  }
+}
+
 
   let buttonDescriptions = {
     juegosClasicos: "Tetris, Snake",

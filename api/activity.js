@@ -2,6 +2,7 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Permitir todas las solicitudes CORS
     try {
         const response = await axios.get('https://api.chucknorris.io/jokes/random');
         res.status(200).json(response.data);
