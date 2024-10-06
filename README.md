@@ -4,7 +4,7 @@ Chill Pill es una aplicación web creada con Svelte para ofrecer actividades div
 Aunque inicialmente estaba planeado usar la [Bored API](https://bored-api.appbrewery.com/) para las sugerencias de actividades, he optado por utilizar la [Chuck Norris API](https://api.chucknorris.io/) directamente, implementando una API en Vercel para manejar las solicitudes.
 
 ## Vista previa de la aplicación  
-![Primer diseño](./public/assets/primer-diseño.png)  
+![Primer diseño](./public/assets/app-web.png)  
 
 
 ## Enlaces Útiles  
