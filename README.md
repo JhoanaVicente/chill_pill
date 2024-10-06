@@ -1,7 +1,7 @@
 # Chill Pill  
 Chill Pill es una aplicación web creada con Svelte para ofrecer actividades divertidas y creativas a las personas que buscan combatir el aburrimiento. Al hacer clic en "Sorpréndeme", la app sugiere una actividad aleatoria o una frase divertida de Chuck Norris.
 
-Aunque inicialmente estaba planeado usar la [Bored API](https://bored-api.appbrewery.com/) para las sugerencias de actividades, debido a algunos problemas técnicos, he utilizado la API de Chuck Norris temporalmente. En futuras versiones, planeo desarrollar una API propia para mejorar la experiencia y tener mayor control sobre el contenido.
+Aunque inicialmente estaba planeado usar la [Bored API](https://bored-api.appbrewery.com/) para las sugerencias de actividades, he optado por utilizar la [Chuck Norris API](https://api.chucknorris.io/) directamente, implementando una API en Vercel para manejar las solicitudes.
 
 ## Vista previa de la aplicación  
 ![Primer diseño](./public/assets/primer-diseño.png)  
@@ -42,20 +42,5 @@ npm run dev
 ## Herramientas Recomendadas  
 Si usas Visual Studio Code, se recomienda instalar la extensión oficial de Svelte para mejor soporte de sintaxis y sugerencias de código.  
 
-## Configuración del Proxy  
-Este proyecto utiliza un servidor proxy para manejar las solicitudes a la API de Bored y evitar problemas de CORS. 
-
-### Instrucciones para Configurar el Proxy
-
-1. **Instalar Dependencias**: Asegúrate de tener `express`, `axios` y `cors` instalados en tu servidor proxy. Puedes instalarlos usando:
-   ```bash
-   npm install express axios cors  
-   ``` 
-2. **Ejecutar el Servidor Proxy**: Inicia el servidor proxy ejecutando:  
-   ```bash  
-   node server.js  
-   ``` 
-3. **Uso en el Frontend**: En el código de tu frontend, asegúrate de que todas las solicitudes a la API de Bored pasen a través del proxy:  
-   ```bash  
-   const response = await fetch('http://localhost:5000/api/activity');
-   ``` 
+## Uso de la API  
+Este proyecto utiliza una API alojada en Vercel para manejar las solicitudes a la Chuck Norris API, eliminando la necesidad de un servidor proxy.  

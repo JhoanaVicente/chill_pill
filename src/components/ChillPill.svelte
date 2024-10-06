@@ -11,7 +11,7 @@
     errorMessage = ""; // Reinicia cualquier mensaje de error anterior
 
     try {
-        const response = await fetch('http://localhost:3000/api/activity'); // Llama a tu API
+        const response = await fetch('https://chill-pill-six.vercel.app/api/activity'); // Llama a tu API
         if (!response.ok) throw new Error("Error de red");
 
         const data = await response.json(); // Obtén la actividad
