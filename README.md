@@ -21,7 +21,7 @@ Aunque inicialmente estaba planeado usar la [Bored API](https://bored-api.appbre
 ## Tecnologías Utilizadas  
 **Frontend**: Svelte  
 **Estilos**: CSS  
-**API**: [Chuck Norris API](https://api.chucknorris.io/)
+**API**: [Chuck Norris API](https://api.chucknorris.io/)  
 **Proxy Server**: Express, Axios, y Cors (para manejar CORS y llamadas API)
 
 ## Instalación  
